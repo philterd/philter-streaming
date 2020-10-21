@@ -1,0 +1,14 @@
+.metadata
+.cache
+.settings/
+target/
+.classpath
+.project
+dependency-reduced-pom.xml
+*.log
+*.zip
+*.jar
+.idea/
+*.iml
+.srl
+manifest.json

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mtnfog</groupId>
+    <artifactId>philter-streaming</artifactId>
+    <name>philter-streaming</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <description>Provides Philter capability integration with streaming frameworks.</description>
+    <inceptionYear>2019</inceptionYear>
+    <organization>
+        <name>Mountain Fog, Inc.</name>
+        <url>http://www.mtnfog.com</url>
+    </organization>
+    <scm>
+        <connection>scm:git@github.com:mtnfog/philter-streaming.git</connection>
+        <developerConnection>scm:git@github.com:mtnfog/philter-streaming.git</developerConnection>
+        <url>https://github.com/mtnfog/philter/</url>
+    </scm>
+    <developers>
+        <developer>
+            <name>Mountain Fog</name>
+            <email>support@mtnfog.com</email>
+            <organization>Mountain Fog</organization>
+            <organizationUrl>http://www.mtnfog.com</organizationUrl>
+        </developer>
+    </developers>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- Project dependency versions -->
+        <junit.version>4.11</junit.version>
+        <philter.version>1.2.0</philter.version>
+        <flink.version>1.9.0</flink.version>
+        <pulsar.version>2.4.1</pulsar.version>
+        <scala.major.version>2.12</scala.major.version>
+        <spring.boot.version>2.3.4.RELEASE</spring.boot.version>
+        <log4j2.version>2.13.3</log4j2.version>
+    </properties>
+    <modules>
+        <module>philter-flink-kafka</module>
+        <module>philter-pulsar</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <type>pom</type>
+                <version>2.2.1.RELEASE</version>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*IT.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/*IT.java</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>failsafe-integration-tests</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
