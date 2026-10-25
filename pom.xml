@@ -11,19 +11,19 @@
     <inceptionYear>2019</inceptionYear>
     <organization>
         <name>Mountain Fog, Inc.</name>
-        <url>http://www.mtnfog.com</url>
+        <url>https://philterd.ai</url>
     </organization>
     <scm>
-        <connection>scm:git@github.com:mtnfog/philter-streaming.git</connection>
-        <developerConnection>scm:git@github.com:mtnfog/philter-streaming.git</developerConnection>
-        <url>https://github.com/mtnfog/philter/</url>
+        <connection>scm:git@github.com:philterd/philter-streaming.git</connection>
+        <developerConnection>scm:git@github.com:philterd/philter-streaming.git</developerConnection>
+        <url>https://github.com/philterd/philter-streaming</url>
     </scm>
     <developers>
         <developer>
             <name>Mountain Fog</name>
-            <email>support@mtnfog.com</email>
+            <email>support@philterd.ai</email>
             <organization>Mountain Fog</organization>
-            <organizationUrl>http://www.mtnfog.com</organizationUrl>
+            <organizationUrl>https://philterd.ai</organizationUrl>
         </developer>
     </developers>
     <properties>
